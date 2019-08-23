@@ -1,0 +1,74 @@
+.body {
+    /*fill entire screen*/
+    width: 100%;
+    height: 100%;
+    /* hide elements that flow outside of the view space*/
+    overflow: hidden;
+ 
+}
+audio {
+    position: center; 
+}
+.page {
+    background-image: url(./starWars.jpg);
+}
+.fade {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    top:-25px;
+    background-image: linear-gradient(0 deg, transparent, black 75%);
+    z-index: 1;
+}
+.star-wars {
+    /* center element on entire screen */
+    display: flex; 
+    justify-content: center;
+    position: relative; 
+    /* magin number */
+    height: 800px;
+    /* transform 3D text */
+    perspective: 400px;
+    /*  Styling */
+    color: #feda4a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    text-align: justify;
+}
+.crawl {
+    /* adjust top property */
+    position: relative; 
+    /* text is off screen at start */
+    top: 9999px;
+    /* skew origin */
+    transform-origin: 50% 100%;
+    /* ANimation for 1min */
+    animation: crawl 60s linear;
+.crawl > .title {
+    font-size: 90%;
+    text-align: center;
+}
+.crawl > .title h1 {
+    margin: 0 0 100px; 
+    text-transfrom: uppercase;
+}
+}
+/* ANimation CRAWL */
+@keyframes crawl {
+    0% {
+        /* element starts below screen */
+        top: 0;
+        /* rotate 20deg, but keep it close */
+        transform: rotateX(20deg) translateZ(0);
+    }
+    100% {
+        /* magin number - use BIG number! */
+        top: -6000px;
+        /* Slightly increase rotation end end and move */
+        transform: rotateX(25deg) translateZ(-2500px);
+    }
+}
+
